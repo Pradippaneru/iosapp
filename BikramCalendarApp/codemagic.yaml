@@ -1,0 +1,17 @@
+workflows:
+  ios-build:
+    name: Bikram iOS Build
+    platform: ios
+    xcode_project: BikramCalendarApp.xcodeproj  # Replace if your project uses .xcworkspace
+    xcode_scheme: BikramCalendarApp  # Replace with the actual scheme name
+    build:
+      ios:
+        export_method: development
+    test:
+      ios:
+        test_type: unit_tests
+    triggering:
+      git:
+        push:
+          branches:
+            - master 
